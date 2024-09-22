@@ -1,0 +1,179 @@
+@import url(reset.css);
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.woff2') format('woff2'),
+        url('/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    color: #FFF;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12px;
+    background: url(/img/background.png) no-repeat 50%/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 21, 21, 0.50);
+    z-index: -2;
+}
+
+.form {
+  width: 496px;
+  height: 100%;
+  padding: 60px 0 0 0;
+  position: relative;
+}
+.form::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(233, 233, 233, 0.25);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+.container {
+  margin: 0 auto;
+  width: 340px;
+}
+
+.switch input{
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.switch label {
+    display: flex;
+    width: 340px;
+    height: 36px;
+    border: 1px solid #153416;
+    border-radius: 30px;
+    position: relative;
+}
+.switch label::before {
+    content: "";
+    position: absolute;
+    top:2px;
+    left: 2px;
+    bottom: 2px;
+    width: 168px;
+    background-color: #153416;;
+    border-radius: 30px;
+    transition: all .5s linear;
+}
+.switch input:checked+label::before {
+   left: 49.5%;
+}
+
+.header-text {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-title {
+    font-size: 30px;
+    text-align: center;
+    padding: 75px 0 29px 0;
+}
+.input {
+    display: flex;
+    flex-flow: column;
+    gap:15px;
+}
+.input>input {
+    height: 44px;
+   background-color:#929191 ;
+   border: #929191;
+   border-radius: 30px;
+   padding-left: 20px;
+}
+input::placeholder{
+    color: #FFF;
+}
+.remember {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.remember> input, .remember>label, .submit>input, .input>input, .switch label {
+    cursor: pointer;
+}
+.remember-one{
+    padding:21px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#remember {
+    height: 15px;
+    width: 15px;
+}
+.remember-button {
+    color: #153416;
+    text-decoration: none;
+}
+.submit {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.submit>input {
+    height: 44px;
+    width: 340px;
+    background-color: #153416;
+    border: 1px solid #153416;
+    border-radius: 30px;
+    color: #FFF;
+}
+.submit:hover>input {
+    background-color: #122e12;
+}
+.account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    padding: 40px 0 30px 0;
+}
+.account>a , .account + a{
+    text-decoration: none;
+}
+.account>a:hover, .account + a:hover, .remember-button:hover{
+    text-decoration: underline;
+}
+.account + a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #153416;
+    padding-bottom: 20px;
+}
+.svg-logo-link>svg {
+    width: 24px;
+    height: 24px;
+    fill: #153416;
+    transition: all 0.5s linear;
+}
+.svg-logo-link>svg:hover{
+    transform: scale(1.2);
+}
+.svg-logo {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
